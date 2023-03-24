@@ -5,12 +5,14 @@ recPrint($jsonData);
 function recPrint($data)
 {
     foreach ($data as $el) {
+        echo '<ul>';
         if(isset($el['isFolder'])) {
-            echo "<p>+" . $el['title'] . '</p>';
+            echo "<li>+" . $el['title'] . '</li>';
             recPrint($el['children']);
         }
         else {
-            echo "<p>-" . $el['title'] . '</p>';
+            echo "<li>-" . $el['title'] . '</li>';
         }
+        echo '</ul>';
     }
 }

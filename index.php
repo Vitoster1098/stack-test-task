@@ -1,10 +1,15 @@
-<?php
-include_once 'tmp.hierarchy.php';
-
-$template = new Template("");
-$menu = array();
-$menu["http://task.test:81"] = "Главная";
-$template->set("data", $jsonData = json_decode(file_get_contents('json.json'), true));
-var_dump($template->data);
-$template->display("hierarchy");
-?>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Задание 1</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="main-header">
+    <h1 class="visually-hidden">Задание №1</h1>
+</header>
+<div class="main-content">
+    <main class="content"><?php include_once 'hierarchy_true.php';?></main>
+</div>
+</body>
+</html>
