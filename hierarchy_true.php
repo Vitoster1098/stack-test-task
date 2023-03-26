@@ -1,18 +1,19 @@
 <?php
 $jsonData = json_decode(file_get_contents('files/json.json'), true);
-recPrint($jsonData);
 
-function recPrint($data)
+function recPrint($data) : string
 {
-    echo '<ul>';
+    $ret = '<ul>';
     foreach ($data as $el) {
         if(isset($el['isFolder'])) {
-            echo "<li>+" . $el['title'] . '</li>';
-            recPrint($el['children']);
+            $ret .= "<li class='parent'>+" . $el['title'] . '</li>';
+            $ret .= recPrint($el['children']);
         }
         else {
-            echo "<li>-" . $el['title'] . '</li>';
+            $ret .= "<li>-" . $el['title'] . '</li>';
         }
     }
-    echo '</ul>';
+    $ret .= '</ul>';
+    return $ret;
 }
+?>

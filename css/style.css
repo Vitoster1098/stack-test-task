@@ -1,7 +1,18 @@
-body{
+body {
     margin: 0;
     padding: 0;
+    background-color: antiquewhite;
 }
-li {
+h1 {
+
+}
+.content {
+
+}
+.content ul li.parent{
+    font-size: 18px;
+}
+.content li {
+    font-size: 14px;
     list-style-type: none;
 }
